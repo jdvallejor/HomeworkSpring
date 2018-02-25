@@ -2,21 +2,25 @@ package com.homeworkspring.example.document;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Document
 public class Note {
 
     @Id
     private String id;
-    private String date;
-    private String userId;
+    //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private Date date;
+    private String user;
     private String text;
 
     public Note() {}
 
-    public Note(String date, String userId, String text) {
+    public Note(Date date, String user, String text) {
         this.date = date;
-        this.userId = userId;
+        this.user = user;
         this.text = text;
     }
 
@@ -28,20 +32,20 @@ public class Note {
         this.id = id;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUser() {
+        return user;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUser(String userId) {
+        this.user = userId;
     }
 
     public String getText() {

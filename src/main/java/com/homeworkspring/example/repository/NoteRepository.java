@@ -8,7 +8,7 @@ import java.util.List;
 public interface NoteRepository extends MongoRepository<Note, String> {
 
     Note findById(String id);
-    List<Note> findAllByUserId(String id);
-    void deleteByUserId(String id);
+    List<Note> findAllByUser(String id);
+    void deleteByUser(String id);
 
 }

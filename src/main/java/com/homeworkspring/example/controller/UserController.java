@@ -20,7 +20,7 @@ public class UserController {
         this.noteRepository = noteRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<User> getAll(){
         return this.userRepository.findAll();
     }
@@ -37,7 +37,7 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") String id){
-        List<Note> notes = this.noteRepository.findAllByUserId(id);
+        List<Note> notes = this.noteRepository.findAllByUser(id);
         for (Note note: notes){
             this.noteRepository.delete(note.getId());
         }

@@ -17,7 +17,7 @@ public class NoteController {
         this.noteRepository = noteRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<Note> getAll(){
         return this.noteRepository.findAll();
     }
@@ -43,15 +43,15 @@ public class NoteController {
         return note;
     }
 
-    @GetMapping("/findByUserId/{id}")
-    public List<Note> getByUserId(@PathVariable String id){
-        List<Note> notes = this.noteRepository.findAllByUserId(id);
+    @GetMapping("/findByUser/{id}")
+    public List<Note> getByUser(@PathVariable String id){
+        List<Note> notes = this.noteRepository.findAllByUser(id);
         return notes;
     }
 
     @DeleteMapping("/deleteByUserId/{id}")
-    public void deleteByUserId(String id){
-        this.noteRepository.deleteByUserId(id);
+    public void deleteByUser(String id){
+        this.noteRepository.deleteByUser(id);
     }
 
 }
