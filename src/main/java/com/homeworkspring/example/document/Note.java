@@ -9,12 +9,14 @@ public class Note {
     @Id
     private String id;
     private String date;
-    private String username;
+    private String userId;
     private String text;
 
-    public Note(String date, String username, String text) {
+    public Note() {}
+
+    public Note(String date, String userId, String text) {
         this.date = date;
-        this.username = username;
+        this.userId = userId;
         this.text = text;
     }
 
@@ -34,12 +36,12 @@ public class Note {
         this.date = date;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getText() {
