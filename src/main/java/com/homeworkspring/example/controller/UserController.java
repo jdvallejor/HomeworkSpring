@@ -32,7 +32,7 @@ public class UserController {
 
     @PutMapping
     public void update(@RequestBody User user){
-        this.userRepository.insert(user);
+        this.userRepository.save(user);
     }
 
     @DeleteMapping("/{id}")

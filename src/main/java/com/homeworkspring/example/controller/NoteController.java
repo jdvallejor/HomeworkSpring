@@ -29,7 +29,7 @@ public class NoteController {
 
     @PutMapping
     public void update(@RequestBody Note note){
-        this.noteRepository.insert(note);
+        this.noteRepository.save(note);
     }
 
     @DeleteMapping("/{id}")
@@ -39,19 +39,17 @@ public class NoteController {
 
     @GetMapping("/{id}")
     public Note getById(@PathVariable("id") String id){
-        Note note = this.noteRepository.findById(id);
-        return note;
+        return this.noteRepository.findById(id);
     }
 
     @GetMapping("/findByUser/{id}")
     public List<Note> getByUser(@PathVariable String id){
-        List<Note> notes = this.noteRepository.findAllByUser(id);
-        return notes;
+        return this.noteRepository.findAllByUser(id);
     }
 
-    @DeleteMapping("/deleteByUserId/{id}")
-    public void deleteByUser(String id){
-        this.noteRepository.deleteByUser(id);
+    @DeleteMapping("/deleteByUser/{id}")
+    public void deleteByUser(@PathVariable String id){
+        this.noteRepository.deleteAllByUser(id);
     }
 
 }

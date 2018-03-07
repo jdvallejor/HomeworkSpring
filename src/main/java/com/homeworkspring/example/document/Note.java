@@ -12,13 +12,13 @@ public class Note {
     @Id
     private String id;
     //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Date date;
+    private String date;
     private String user;
     private String text;
 
     public Note() {}
 
-    public Note(Date date, String user, String text) {
+    public Note(String date, String user, String text) {
         this.date = date;
         this.user = user;
         this.text = text;
@@ -32,11 +32,11 @@ public class Note {
         this.id = id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
