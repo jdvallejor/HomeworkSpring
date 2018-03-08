@@ -40,6 +40,11 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+		</dependency>
+
 		<!-- Needed for JSON View -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>

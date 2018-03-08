@@ -24,10 +24,10 @@ public class MongoDBConfig {
                 userRepository.deleteAll();
                 noteRepository.deleteAll();
 
-                String id1 = userRepository.save(new User("User1")).getId();
-                String id2 = userRepository.save(new User("User2")).getId();
-                String id3 = userRepository.save(new User("User3")).getId();
-                String id4 = userRepository.save(new User("User4")).getId();
+                String id1 = userRepository.save(new User("User1", "Password1")).getId();
+                String id2 = userRepository.save(new User("User2", "Password2")).getId();
+                String id3 = userRepository.save(new User("User3", "Password3")).getId();
+                String id4 = userRepository.save(new User("User4", "Password4")).getId();
 
                 noteRepository.save(new Note(new Date().toString(), id1, "Text1"));
                 noteRepository.save(new Note(new Date().toString(), id1, "Text12"));
